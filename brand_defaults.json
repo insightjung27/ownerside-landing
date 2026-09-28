@@ -1,0 +1,162 @@
+{
+  "_doc": "웹 스타터킷 기본값 SSOT — 컨셉만 주면 이 값들이 자동 적용된다(매번 조정 제거). 씨앗색 1개 + 역할 정의에서 팔레트·타이포·간격을 결정론으로 생성. J가 감동한 backtal의 '역할별 타이포 위계'를 1급 시민으로.",
+  "brand": {
+    "name": "오너사이드",
+    "seed_color": "#0F2A4A",
+    "accent_color": "#E23B3B",
+    "neutral_bg": "#FFFFFF",
+    "ink": "#1A1D23"
+  },
+  "typography": {
+    "font_family": "Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif",
+    "font_cdn": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css",
+    "base_px": 16,
+    "scale_ratio": 1.25,
+    "roles": {
+      "display": {
+        "step": 6,
+        "weight": 800,
+        "line_height": 1.08,
+        "letter_spacing": "-0.02em",
+        "transform": "none",
+        "color": "ink",
+        "responsive": true,
+        "use": "히어로 메인타이틀(페이지당 1회)"
+      },
+      "h1": {
+        "step": 5,
+        "weight": 700,
+        "line_height": 1.15,
+        "letter_spacing": "-0.015em",
+        "transform": "none",
+        "color": "ink",
+        "use": "페이지 대제목"
+      },
+      "h2": {
+        "step": 3,
+        "weight": 700,
+        "line_height": 1.25,
+        "letter_spacing": "-0.01em",
+        "transform": "none",
+        "color": "ink",
+        "use": "섹션 제목"
+      },
+      "h3": {
+        "step": 2,
+        "weight": 600,
+        "line_height": 1.35,
+        "letter_spacing": "-0.005em",
+        "transform": "none",
+        "color": "ink",
+        "use": "카드·소제목"
+      },
+      "eyebrow": {
+        "step": -1,
+        "weight": 600,
+        "line_height": 1.4,
+        "letter_spacing": "0.18em",
+        "transform": "uppercase",
+        "color": "accent",
+        "use": "서브타이틀/키커(섹션 상단 소제목) — 예: INCHEON SEO-GU · BORN IN 1974"
+      },
+      "lead": {
+        "step": 1,
+        "weight": 400,
+        "line_height": 1.6,
+        "letter_spacing": "0",
+        "transform": "none",
+        "color": "muted",
+        "use": "히어로·섹션 리드문(본문보다 크고 옅게)"
+      },
+      "body": {
+        "step": 0,
+        "weight": 400,
+        "line_height": 1.75,
+        "letter_spacing": "0",
+        "transform": "none",
+        "color": "body",
+        "use": "본문 단락"
+      },
+      "caption": {
+        "step": -1,
+        "weight": 400,
+        "line_height": 1.5,
+        "letter_spacing": "0.01em",
+        "transform": "none",
+        "color": "muted",
+        "use": "주석·캡션·메타정보"
+      },
+      "button": {
+        "step": 0,
+        "weight": 600,
+        "line_height": 1,
+        "letter_spacing": "0.01em",
+        "transform": "none",
+        "color": "onAccent",
+        "use": "버튼 라벨(중앙정렬 강제)"
+      }
+    }
+  },
+  "spacing": {
+    "base_px": 8,
+    "steps": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64,
+      96,
+      128
+    ]
+  },
+  "radius": {
+    "sm": 8,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "imagery": {
+    "policy": "히어로 실사 1장 원칙 + 딥컬러 오버레이로 텍스트 대비 확보. 카드 스택 금지(에디토리얼 도형화).",
+    "sources": [
+      "Unsplash",
+      "Pexels",
+      "Pixabay"
+    ],
+    "hero_treatment": "brand.seed_color 60~75% 오버레이 위 화이트 텍스트(WCAG AA 이상)"
+  },
+  "map": {
+    "provider": "kakao",
+    "embed_template": "map_embed.html"
+  },
+  "gates": {
+    "required_before_done": [
+      "font_pinned(Pretendard CDN 1개)",
+      "type_ramp_applied(.t-* 유틸만 사용·인라인 폰트크기 금지)",
+      "single_seed_palette(씨앗색1개 파생)",
+      "wcag_aa_contrast(본문4.5·대형3.0)",
+      "hero_real_image(실사·플레이스홀더 금지)",
+      "mobile_pc_parity",
+      "button_label_centered",
+      "no_card_stacking",
+      "modal_viewport_safe(전체화면 모달/위저드=상단정렬(center 금지)·하단 액션바 항상 뷰포트 내·100dvh 오버플로로 버튼 잘림 금지)"
+    ],
+    "required_if_multilingual": [
+      "i18n_full_coverage(모든 data-i18n 키가 스위처 전 언어를 커버·미번역 잔존0·폴백 en)",
+      "no_tofu_glyph(문자별 Noto 폰트 커버리지·각 스크립트 언어 CDP 캡처 육안확인)",
+      "lang_switcher_always_visible(navigator.language 자동감지·한국어 강제기본 금지·?lang 딥링크)"
+    ],
+    "_multilingual_pattern": "templates/i18n_multilang.md",
+    "required_if_clickable_prototype": [
+      "flow_end_to_end(핵심 플로우 클릭 완주·주문/접수번호 발급까지 실동작·headless E2E 통과)",
+      "demo_mode_labeled(실결제/실서버/실PII 없음·전부 localStorage·실거래 오인지점 '데모' 라벨)",
+      "all_states_covered(로딩·빈데이터·에러·완료 UI 전부)",
+      "content_fuzz_safe(긴 이름·큰 숫자에 가로 오버플로 0·값 wrap)",
+      "a11y_modal(role=dialog·aria-modal·ESC·포커스 트랩·복귀)"
+    ],
+    "_clickable_prototype_pattern": "templates/clickable_demo_mode.md"
+  }
+}

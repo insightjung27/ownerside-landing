@@ -1,0 +1,156 @@
+/* tokens.css — 오너사이드 · generate_tokens.py 자동생성(수기수정 금지, 씨앗값만 바꿔 재생성) */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+:root {
+  --font-sans: Pretendard Variable, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  --color-seed: #0F2A4A;
+  --color-accent: #E23B3B;
+  --color-accentStrong: #DF2929;
+  --color-bg: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-ink: #1A1D23;
+  --color-body: #123359;
+  --color-muted: #20599D;
+  --color-accentText: #E23B3B;
+  --color-onAccent: #FFFFFF;
+  --color-border: #D5E4F6;
+  --seed-50: #EEF4FC;
+  --seed-100: #D5E4F6;
+  --seed-200: #AAC9EE;
+  --seed-300: #77A9E3;
+  --seed-400: #4086D8;
+  --seed-500: #276CBF;
+  --seed-600: #20599D;
+  --seed-700: #19467B;
+  --seed-800: #123359;
+  --seed-900: #0C223B;
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --text-display-size: clamp(2.212rem, 1.650rem + 2.404vw, 3.812rem);
+  --text-display-weight: 800;
+  --text-display-lh: 1.08;
+  --text-display-ls: -0.02em;
+  --text-h1-size: clamp(2.013rem, 1.650rem + 1.559vw, 3.05rem);
+  --text-h1-weight: 700;
+  --text-h1-lh: 1.15;
+  --text-h1-ls: -0.015em;
+  --text-h2-size: clamp(1.444rem, 1.262rem + 0.761vw, 1.95rem);
+  --text-h2-weight: 700;
+  --text-h2-lh: 1.25;
+  --text-h2-ls: -0.01em;
+  --text-h3-size: clamp(1.281rem, 1.181rem + 0.423vw, 1.562rem);
+  --text-h3-weight: 600;
+  --text-h3-lh: 1.35;
+  --text-h3-ls: -0.005em;
+  --text-eyebrow-size: 0.8rem;
+  --text-eyebrow-weight: 600;
+  --text-eyebrow-lh: 1.4;
+  --text-eyebrow-ls: 0.18em;
+  --text-lead-size: clamp(1.125rem, 1.081rem + 0.188vw, 1.25rem);
+  --text-lead-weight: 400;
+  --text-lead-lh: 1.6;
+  --text-lead-ls: 0;
+  --text-body-size: 1.0rem;
+  --text-body-weight: 400;
+  --text-body-lh: 1.75;
+  --text-body-ls: 0;
+  --text-caption-size: 0.8rem;
+  --text-caption-weight: 400;
+  --text-caption-lh: 1.5;
+  --text-caption-ls: 0.01em;
+  --text-button-size: 1.0rem;
+  --text-button-weight: 600;
+  --text-button-lh: 1;
+  --text-button-ls: 0.01em;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --tap-min: 44px;
+  --ease-out: cubic-bezier(.2,.7,.2,1);
+  --ease-inout: cubic-bezier(.4,0,.2,1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 380ms;
+  color-scheme: light;
+}
+
+/* 라이트/다크 시맨틱 토큰 쌍 — OS 설정 + [data-theme] 수동 오버라이드 양방향 */
+@media (prefers-color-scheme: dark) {
+:root:not([data-theme="light"]) {
+  --color-bg: #121417;
+  --color-surface: #1D2125;
+  --color-ink: #F4F5F5;
+  --color-body: #D7D9DB;
+  --color-muted: #8D939A;
+  --color-border: #383D42;
+  --color-accent: #E23B3B;
+  --color-accentStrong: #DF2929;
+  --color-onAccent: #FFFFFF;
+  --color-accentText: #E36363;
+  color-scheme: dark;
+}
+}
+:root[data-theme="dark"] {
+  --color-bg: #121417;
+  --color-surface: #1D2125;
+  --color-ink: #F4F5F5;
+  --color-body: #D7D9DB;
+  --color-muted: #8D939A;
+  --color-border: #383D42;
+  --color-accent: #E23B3B;
+  --color-accentStrong: #DF2929;
+  --color-onAccent: #FFFFFF;
+  --color-accentText: #E36363;
+  color-scheme: dark;
+}
+
+/* 최소 리셋 + 본문 기본 */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--font-sans);background:var(--color-bg);color:var(--color-body);font-size:var(--text-body-size);line-height:var(--text-body-lh);font-weight:var(--text-body-weight);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;word-break:keep-all}
+img{max-width:100%;height:auto;display:block}
+
+/* 역할별 타이포 유틸 — 컴포넌트는 인라인 폰트크기 금지, 이 클래스만 사용 */
+.t-display{font-size:var(--text-display-size);font-weight:var(--text-display-weight);line-height:var(--text-display-lh);letter-spacing:var(--text-display-ls);color:var(--color-ink);}
+.t-h1{font-size:var(--text-h1-size);font-weight:var(--text-h1-weight);line-height:var(--text-h1-lh);letter-spacing:var(--text-h1-ls);color:var(--color-ink);}
+.t-h2{font-size:var(--text-h2-size);font-weight:var(--text-h2-weight);line-height:var(--text-h2-lh);letter-spacing:var(--text-h2-ls);color:var(--color-ink);}
+.t-h3{font-size:var(--text-h3-size);font-weight:var(--text-h3-weight);line-height:var(--text-h3-lh);letter-spacing:var(--text-h3-ls);color:var(--color-ink);}
+.t-eyebrow{font-size:var(--text-eyebrow-size);font-weight:var(--text-eyebrow-weight);line-height:var(--text-eyebrow-lh);letter-spacing:var(--text-eyebrow-ls);color:var(--color-accentText);text-transform:uppercase;}
+.t-lead{font-size:var(--text-lead-size);font-weight:var(--text-lead-weight);line-height:var(--text-lead-lh);letter-spacing:var(--text-lead-ls);color:var(--color-muted);}
+.t-body{font-size:var(--text-body-size);font-weight:var(--text-body-weight);line-height:var(--text-body-lh);letter-spacing:var(--text-body-ls);color:var(--color-body);}
+.t-caption{font-size:var(--text-caption-size);font-weight:var(--text-caption-weight);line-height:var(--text-caption-lh);letter-spacing:var(--text-caption-ls);color:var(--color-muted);}
+.t-button{font-size:var(--text-button-size);font-weight:var(--text-button-weight);line-height:var(--text-button-lh);letter-spacing:var(--text-button-ls);color:var(--color-onAccent);}
+
+/* 버튼(라벨 중앙정렬 강제) */
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;padding:14px 24px;border-radius:var(--radius-pill);border:0;cursor:pointer;font-family:var(--font-sans)}
+.btn-primary{background:var(--color-accentStrong);color:var(--color-onAccent)}
+.btn-ghost{background:transparent;color:var(--color-ink);border:1.5px solid var(--color-border)}
+
+/* 실기기 safe-area — fixed 하단탭/상단바는 반드시 이 유틸(홈인디케이터·노치 겹침 방지) */
+.safe-t{padding-top:max(12px,var(--safe-top))}
+.safe-b{padding-bottom:max(12px,var(--safe-bottom))}
+.safe-x{padding-left:max(16px,var(--safe-left));padding-right:max(16px,var(--safe-right))}
+.app-bottom-bar{position:fixed;left:0;right:0;bottom:0;padding-bottom:var(--safe-bottom);background:var(--color-bg);border-top:1px solid var(--color-border)}
+.app-top-bar{position:sticky;top:0;padding-top:var(--safe-top);background:var(--color-bg)}
+/* 최소 터치 타깃 44px — 아이콘버튼·탭 항목에 .tap */
+.tap{min-width:var(--tap-min);min-height:var(--tap-min);display:inline-flex;align-items:center;justify-content:center}
+
+/* 모션 — 상호작용 기본 전이(절제). 스크롤 리빌은 .reveal + IntersectionObserver */
+a,button,.btn,.card,[data-hover]{transition:transform var(--dur-fast) var(--ease-out),background-color var(--dur-base) var(--ease-out),box-shadow var(--dur-base) var(--ease-out),opacity var(--dur-base) var(--ease-out),color var(--dur-base) var(--ease-out)}
+.btn:active{transform:translateY(1px)}
+.reveal{opacity:0;transform:translateY(12px)}
+.reveal.in{opacity:1;transform:none;transition:opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out)}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
