@@ -125,6 +125,10 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(function (el) { io.observe(el); });
+    // failsafe — 관찰자가 놓쳐도 콘텐츠가 숨은 채 남지 않게 3초 후 전부 표시
+    setTimeout(function () {
+      reveals.forEach(function (el) { el.classList.add('in'); });
+    }, 3000);
   }
 
   /* ── 활성 내비 하이라이트 ── */

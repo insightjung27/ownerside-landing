@@ -68,7 +68,8 @@ strong.hl-red { color: var(--red-strong); font-weight: 700; }
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; color: var(--navy); }
 
 /* 버튼 (tokens .btn 기반, 신뢰형 각진 라디우스로 오버라이드) */
-.btn { border-radius: 8px; font-size: .95rem; font-weight: 600; padding: 13px 22px; line-height: 1; }
+.btn { border-radius: 8px; font-size: .95rem; font-weight: 600; padding: 13px 22px; line-height: 1; text-decoration: none; }
+.brand, .detail-link, .contact-aside .mail { text-decoration: none; }
 .btn--sm { padding: 10px 16px; font-size: .88rem; }
 .btn--lg { padding: 16px 30px; font-size: 1.02rem; }
 .btn--navy { background: var(--navy); color: #fff; }
